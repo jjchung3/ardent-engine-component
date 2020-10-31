@@ -1,12 +1,21 @@
-import logo from './logo.svg'
+import React, { useState } from 'react'
+import { 
+  Grid,
+  Button,
+} from '@material-ui/core'
 import './App.css'
-import ScriptView from './ScriptView'
+import PlaygroundView from './PlaygroundView'
 
 function App() {
+  const [reset, setReset] = useState(false)
+
   return (
-    <div className="App">
-      <ScriptView />
-    </div>
+    <Grid className="App">
+      <Button onClick={() => {setReset(!reset)}}>
+        rerender App
+      </Button>
+      <PlaygroundView />
+    </Grid>
   )
 }
 
